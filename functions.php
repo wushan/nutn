@@ -269,14 +269,4 @@ function custom_footer_register( $wp_customize ) {
 
 add_action( 'customize_register', 'custom_header_register' );
 add_action( 'customize_register', 'custom_footer_register' );
-
-
-// add_filter( 'github_updater_token_distribution',
-
-
-// function () {
-//     return array( 'nutn-ee' => '5eaccbabc0f180bfa13065cc86b1259dee59305a' );
-// } );
-
-// add_filter( 'github_updater_hide_settings', '__return_true' );
 ?>
