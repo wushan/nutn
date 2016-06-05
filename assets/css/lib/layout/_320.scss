@@ -1,0 +1,42 @@
+//Layout Restrictions
+.masonry-inner {
+	margin: 0 auto;
+	padding: 0 2em;
+	box-sizing: border-box;
+}
+.restrict-large {
+	max-width: 1170px;
+	margin: 0 auto;
+	padding: 0 2em;
+	@include breakpoint(1280px) {
+		padding: 0;
+	}
+	box-sizing: border-box;
+}
+.restrict {
+	max-width: 740px;
+	margin: 0 auto;
+	padding: 0 2em;
+	@include breakpoint(1280px) {
+		padding: 0;
+	}
+	box-sizing: border-box;
+}
+.restrict-small {
+	max-width: 700px;
+	margin: 0 auto;
+	padding: 0 2em;
+	@include breakpoint(1280px) {
+		padding: 0;
+	}
+	box-sizing: border-box;
+}
+.restrict-tiny {
+	max-width: 550px;
+	margin: 0 auto;
+	padding: 0 2em;
+	@include breakpoint(1280px) {
+		padding: 0;
+	}
+	box-sizing: border-box;
+}

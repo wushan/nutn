@@ -1,0 +1,48 @@
+/*
+Theme Name: nutn-ee
+Theme URI: https://walkingho.me
+Version: 1.0.2
+Description: NUTN Department of Ecoscience and Ecotechnology wordpress theme
+Author: Walkinghome Studio / Tony
+Author URI: https://walkingho.me
+GitHub Theme URI: https://github.com/wushan/nutn-ee
+GitHub Branch: master
+*/
+
+// Moduels
+  //Susy + BreakPoint
+  @import "../../src/bower_components/susy/sass/susy";
+  @import "../../src/bower_components/breakpoint-sass/stylesheets/breakpoint";
+  @import "../../src/bower_components/bourbon/app/assets/stylesheets/bourbon";
+  // @import 
+  //Normalize
+  @import "vendors/normalize";
+
+  //Susy Global
+  @import "lib/susy_global";
+
+//Vars
+@import url(http://fonts.googleapis.com/earlyaccess/notosanstc.css);
+@import "lib/var/var";
+
+//Icons
+@import "lib/sprite";
+@import "lib/var/components";
+//Basic Settings
+@import "lib/base";
+
+//Layout
+@import "lib/layout";
+
+//Navigation
+@import "lib/nav";
+
+//Pages
+@import "lib/main";
+
+//Plugins
+@import "lib/plugins/slidebars.min";
+@import "lib/plugins/jquery.bxslider";
+@import "lib/plugins/magnific-popup";
+//Icons
+@import "lib/icons";

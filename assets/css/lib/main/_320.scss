@@ -1,0 +1,147 @@
+.page-cover {
+	height: 65vh;
+	font-size: 0;
+	position: relative;
+	text-align: center;
+	&:after {
+		content: '';
+		width: 0;
+		height: 100%;
+		display: inline-block;
+		vertical-align: middle;
+	}
+	.page-cover-item {
+		display: inline-block;
+		vertical-align: middle;
+		font-size: 1rem;
+	}
+	.background {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		z-index: -1;
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background-color: rgba($black, .6);
+		}
+	}
+}
+.page-cover-item {
+	a {
+		color: $white;
+		// font-weight:
+	}
+	.article-header {
+		.meta {
+			.post-categories {
+				margin: 0;
+				padding: 0;
+				list-style-type: none;
+				li {
+					display: inline-block;
+					vertical-align: middle;
+					a {
+						display: block;
+						border: 1px solid $white;
+						padding: .2em 1em;
+						text-transform: uppercase;
+						font-size: .875em;
+						font-weight: 600;
+					}
+				}
+			}
+		}
+	}
+	.entry-content {
+		color: rgba($white, .6);
+		// font-size: .875em;
+	}
+}
+.home, .page {
+	.page-container {
+		padding: 2em 0;
+	}	
+}
+
+.masonry-inner {
+	@extend .clr;
+	.masonry-item {
+		img {
+			width: 100%;
+		}
+		.entry-thumbnail {
+			a {
+				display: block;
+				cursor: pointer;
+			}
+		}
+		.entry-title {
+			h3 {
+				margin: 0 0 .5em 0;
+			}
+		}
+		.entry-meta {
+			margin: .5em 0;
+			font-size: .875em;
+			color: $lightgray;
+			text-transform: uppercase;
+		}
+	}
+	.masonry-sizer, .masonry-item {
+		width: 46%;
+		@include breakpoint(768px) {
+			width: 30%
+		}
+		@include breakpoint(1280px) {
+			width: 18%;
+		}
+	}
+	.gutter-sizer {
+		width: 8%;
+		@include breakpoint(768px) {
+			width: 5%;
+		}
+		@include breakpoint(1280px) {
+			width: 2.5%;
+		}
+	}
+}
+
+
+///Single
+.single {
+	.page-cover {
+		height: 85vh;
+	}
+	.entry-content {
+		color: $darkgray;
+		font-size: 1.2em;
+		text-align:justify;
+	}
+	.entry-meta {
+		padding: .5em 2em;
+		background-color: $smokygray;
+		color: $darkgray;
+		font-family: 'proxima-nova', $sans-serif;
+	}
+}
+//Comments
+#comments {
+	padding: 0 2em;
+	.comment-reply-title {
+		font-size: 2.4em;
+		border-bottom: 1px solid $smokygray;
+		color: $main-dark;
+	}	
+}

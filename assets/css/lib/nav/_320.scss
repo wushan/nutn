@@ -1,0 +1,84 @@
+#header {
+  @extend .clr;
+  transition: .6s all ease-in-out;
+  background-color: $main-dark;
+  padding: 1em;
+  &.headroom {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 99;
+    &.headroom--pinned {
+      top: 0px;
+    }
+    &.headroom--unpinned {
+      top: -100%;
+    }
+  }
+  &.headroom--top {
+    background-color: transparent;
+  }
+}
+
+.admin-bar {
+  #header {
+    &.headroom {
+      top: 32px;
+      &.headroom--pinned {
+        top: 32px;
+      }
+      &.headroom--unpinned {
+        top: 0;
+      }
+    }
+  } 
+}
+
+#brand {
+  @include span(3 of 12);
+  .brand-title {
+    a {
+      display: block;
+      color: $white;
+      font-weight: 600;
+      font-size: 1.3em;
+    }
+  }
+}
+nav {
+  display: none;
+  text-align: right;
+  @extend .clr;
+  @include span(9 of 12 last);
+  //Normal
+  ul {
+    font-size: 0;
+    display: none;
+    li {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 1rem;
+      margin-right: 10px;
+      a {
+        display: block;
+        color: $white;
+        font-size: 1.1em;
+        padding: 0 1em;
+      }
+    }
+  }
+  a.mobile-trigger {
+    display: inline-block;
+    vertical-align: middle;
+    @include last;
+  }
+  //Nav in SlideBar
+  &.slide {
+    ul {
+      display: block;
+      li {
+        display: block;
+      }
+    }
+  }
+}

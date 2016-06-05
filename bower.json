@@ -1,0 +1,30 @@
+{
+  "name": "WPGulpTheme",
+  "description": "",
+  "main": "",
+  "authors": [
+    "ahmadawais"
+  ],
+  "license": "GPL-2.0",
+  "homepage": "https://github.com/wushan/WPGulpTheme",
+  "moduleType": [
+    "globals",
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "susy": "^2.2.12",
+    "breakpoint-sass": "^2.7.0",
+    "bourbon": "^4.2.6"
+  },
+  "dependencies": {
+    "masonry": "^4.0.0"
+  }
+}

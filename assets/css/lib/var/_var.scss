@@ -1,0 +1,21 @@
+//Basic Colors // Do Not Modify
+$white: #ffffff;
+$black: #000000;
+$gray: #cccccc;
+$lightgray: #dddddd;
+$smokygray: #f2f2f2;
+$darkgray: #666666;
+$darkestgray: #3e3e3e;
+
+//Set Main Color
+$main: #1565c0;
+$yellow: #ffd150;
+
+//
+$main-dark: #353A53;
+$main-light: lighten($main, 20%);
+
+
+
+//Fonts
+$sans-serif: "lato", "Helvetica Neue", Arial, 'Noto Sans TC', "source-han-sans-traditional","Heiti TC","LiHei Pro","微軟正黑體","Microsoft Jhenghei", sans-serif;
