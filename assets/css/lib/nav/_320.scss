@@ -1,36 +1,26 @@
 #header {
-  @extend .clr;
-  transition: .6s all ease-in-out;
-  background-color: $main-dark;
-  padding: 1em;
-  &.headroom {
-    position: fixed;
-    top: 0px;
-    width: 100%;
-    z-index: 99;
-    &.headroom--pinned {
-      top: 0px;
-    }
-    &.headroom--unpinned {
-      top: -100%;
-    }
+  position: relative;
+}
+#navigation {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  .navigation-inner {
+    padding: 1em;
+    @extend .clr;
   }
-  &.headroom--top {
-    background-color: transparent;
+  .is-sticky {
+    .navigation-inner {
+      background-color: $darkestgray;
+    }
   }
 }
 
 .admin-bar {
-  #header {
-    &.headroom {
-      top: 32px;
-      &.headroom--pinned {
-        top: 32px;
-      }
-      &.headroom--unpinned {
-        top: 0;
-      }
-    }
+  #navigation {
+    
   } 
 }
 
@@ -43,6 +33,9 @@
       font-weight: 600;
       font-size: 1.3em;
     }
+  }
+  img {
+    margin: 0;
   }
 }
 nav {
@@ -79,6 +72,30 @@ nav {
       li {
         display: block;
       }
+    }
+  }
+}
+.meteor-slideshow-wrapper {
+  position: relative;
+  .overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    font-size: 0;
+    text-align: center;
+    &:before {
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      width: 0;
+      height: 100%;
+    }
+    img {
+      display: inline-block;
+      vertical-align: middle;
     }
   }
 }
