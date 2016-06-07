@@ -10,7 +10,7 @@ get_header();
 ?>
 <header id='header'>
 	<div class="meteor-slideshow-wrapper">
-		<?php if ( function_exists( 'meteor_slideshow' ) ) { meteor_slideshow(); } ?>
+		<?php masterslider(1); ?>
 		<div class='overlay'>
 			<img src=<?php echo get_template_directory_uri()?>/assets/img/nutn-ee-logo.png>
 		</div>
@@ -35,14 +35,76 @@ get_header();
 
 			<nav>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+			<?php get_search_form()?>
 			</nav>
 
 		</div>
 	</div>
 </header>
 <main id="main" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+
 	<section class='page-container'>
-		The graphic designer’s first fucking consideration is always the size and shape of the format, whether for the printed page or for digital display. If you’re not being fucking honest with yourself how could you ever hope to communicate something meaningful to someone else? This design is fucking brilliant. You are not your fucking work. Sometimes it is appropriate to place various typographic elements on the outside of the fucking left margin of text to maintain a strong vertical axis. This practice is referred to as exdenting and is most often used with bullets and quotations. Don’t get hung up on things that don’t fucking work. Make your work consistent but not fucking predictable. Learn from fucking criticism. Must-do is a good fucking master. Why are you fucking reading all of this? Get back to work. To go partway is easy, but mastering anything requires hard fucking work. Paul Rand once said, “The public is more familiar with bad fucking design than good design. It is, in effect, conditioned to prefer bad design, because that is what it lives with. The new becomes threatening, the old reassuring.” A good fucking composition is the result of a hierarchy consisting of clearly contrasting elements set with distinct alignments containing irregular intervals of negative space. Use your fucking hands. Fuck. Never let your guard down by thinking you’re fucking good enough. Your rapidograph pens are fucking dried up, the x-acto blades in your bag are rusty, and your mind is dull. Stop clicking your mouse, get messy, go back to the basics and make something fucking original. Form follows fucking function. You won’t get good at anything by doing it a lot fucking aimlessly. Design is all about fucking relationships—the relationship of form and content, the relationship of elements, the relationship of designer and user. Nothing of value comes to you without fucking working at it. Don’t fucking lie to yourself. What’s important is the fucking drive to see a project through no matter what. When you sit down to work, external critics aren’t the enemy. It’s you who you must to fight against to do great fucking work. You must overcome yourself. The details are not the details. They make the fucking design. When you design, you have to draw on your own fucking life experiences. If it’s not something you would want to read/look at/use then why fucking bother? Someday is not a fucking day of the week. Never, never assume that what you have achieved is fucking good enough. Remember it’s called the creative process, it’s not the creative fucking moment. Respect your fucking craft. To surpass others is fucking tough, if you only do as you are told you don’t have it in you to succeed. Practice won’t get you anywhere if you mindlessly fucking practice the same thing. Change only occurs when you work deliberately with purpose toward a goal. Design as if your fucking life depended on it. Think about all the fucking possibilities. You need to sit down and sketch more fucking ideas because stalking your ex on facebook isn’t going to get you anywhere. Widows and orphans are terrible fucking tragedies, both in real life and definitely in typography. Creativity is a fucking work-ethic. Can we all just agree as the greater design community to stop fucking talking about Comic Sans altogether? It’s getting fucking old. Don’t worry about what other people fucking think. Saul Bass on failure: Failure is built into creativity… the creative act involves this element of ‘newness’ and ‘experimentalism,’ then one must expect and accept the fucking possibility of failure. While having drinks with Tibor Kalman one night, he told me, “When you make something no one hates, no one fucking loves it.” Dedicate yourself to lifelong fucking learning. If you fucking give up, you will achieve nothing. Intuition is fucking important. The graphic designer’s first fucking consideration is always the size and shape of the format, whether for the printed page or for digital display. If you’re not being fucking honest with yourself how could you ever hope to communicate something meaningful to someone else? This design is fucking brilliant. You are not your fucking work. Sometimes it is appropriate to place various typographic elements on the outside of the fucking left margin of text to maintain a strong vertical axis. This practice is referred to as exdenting and is most often used with bullets and quotations. Don’t get hung up on things that don’t fucking work. Make your work consistent but not fucking predictable. Learn from fucking criticism. Must-do is a good fucking master. Why are you fucking reading all of this? Get back to work. To go partway is easy, but mastering anything requires hard fucking work. Paul Rand once said, “The public is more familiar with bad fucking design than good design. It is, in effect, conditioned to prefer bad design, because that is what it lives with. The new becomes threatening, the old reassuring.” A good fucking composition is the result of a hierarchy consisting of clearly contrasting elements set with distinct alignments containing irregular intervals of negative space. Use your fucking hands. Fuck. Never let your guard down by thinking you’re fucking good enough. Your rapidograph pens are fucking dried up, the x-acto blades in your bag are rusty, and your mind is dull. Stop clicking your mouse, get messy, go back to the basics and make something fucking original. Form follows fucking function. You won’t get good at anything by doing it a lot fucking aimlessly. Design is all about fucking relationships—the relationship of form and content, the relationship of elements, the relationship of designer and user. Nothing of value comes to you without fucking working at it. Don’t fucking lie to yourself. What’s important is the fucking drive to see a project through no matter what. When you sit down to work, external critics aren’t the enemy. It’s you who you must to fight against to do great fucking work. You must overcome yourself. The details are not the details. They make the fucking design. When you design, you have to draw on your own fucking life experiences. If it’s not something you would want to read/look at/use then why fucking bother? Someday is not a fucking day of the week. Never, never assume that what you have achieved is fucking good enough. Remember it’s called the creative process, it’s not the creative fucking moment. Respect your fucking craft. To surpass others is fucking tough, if you only do as you are told you don’t have it in you to succeed. Practice won’t get you anywhere if you mindlessly fucking practice the same thing. Change only occurs when you work deliberately with purpose toward a goal. Design as if your fucking life depended on it. Think about all the fucking possibilities. You need to sit down and sketch more fucking ideas because stalking your ex on facebook isn’t going to get you anywhere. Widows and orphans are terrible fucking tragedies, both in real life and definitely in typography. Creativity is a fucking work-ethic. Can we all just agree as the greater design community to stop fucking talking about Comic Sans altogether? It’s getting fucking old. Don’t worry about what other people fucking think. Saul Bass on failure: Failure is built into creativity… the creative act involves this element of ‘newness’ and ‘experimentalism,’ then one must expect and accept the fucking possibility of failure. While having drinks with Tibor Kalman one night, he told me, “When you make something no one hates, no one fucking loves it.” Dedicate yourself to lifelong fucking learning. If you fucking give up, you will achieve nothing. Intuition is fucking important. The graphic designer’s first fucking consideration is always the size and shape of the format, whether for the printed page or for digital display. If you’re not being fucking honest with yourself how could you ever hope to communicate something meaningful to someone else? This design is fucking brilliant. You are not your fucking work. Sometimes it is appropriate to place various typographic elements on the outside of the fucking left margin of text to maintain a strong vertical axis. This practice is referred to as exdenting and is most often used with bullets and quotations. Don’t get hung up on things that don’t fucking work. Make your work consistent but not fucking predictable. Learn from fucking criticism. Must-do is a good fucking master. Why are you fucking reading all of this? Get back to work. To go partway is easy, but mastering anything requires hard fucking work. Paul Rand once said, “The public is more familiar with bad fucking design than good design. It is, in effect, conditioned to prefer bad design, because that is what it lives with. The new becomes threatening, the old reassuring.” A good fucking composition is the result of a hierarchy consisting of clearly contrasting elements set with distinct alignments containing irregular intervals of negative space. Use your fucking hands. Fuck. Never let your guard down by thinking you’re fucking good enough. Your rapidograph pens are fucking dried up, the x-acto blades in your bag are rusty, and your mind is dull. Stop clicking your mouse, get messy, go back to the basics and make something fucking original. Form follows fucking function. You won’t get good at anything by doing it a lot fucking aimlessly. Design is all about fucking relationships—the relationship of form and content, the relationship of elements, the relationship of designer and user. Nothing of value comes to you without fucking working at it. Don’t fucking lie to yourself. What’s important is the fucking drive to see a project through no matter what. When you sit down to work, external critics aren’t the enemy. It’s you who you must to fight against to do great fucking work. You must overcome yourself. The details are not the details. They make the fucking design. When you design, you have to draw on your own fucking life experiences. If it’s not something you would want to read/look at/use then why fucking bother? Someday is not a fucking day of the week. Never, never assume that what you have achieved is fucking good enough. Remember it’s called the creative process, it’s not the creative fucking moment. Respect your fucking craft. To surpass others is fucking tough, if you only do as you are told you don’t have it in you to succeed. Practice won’t get you anywhere if you mindlessly fucking practice the same thing. Change only occurs when you work deliberately with purpose toward a goal. Design as if your fucking life depended on it. Think about all the fucking possibilities. You need to sit down and sketch more fucking ideas because stalking your ex on facebook isn’t going to get you anywhere. Widows and orphans are terrible fucking tragedies, both in real life and definitely in typography. Creativity is a fucking work-ethic. Can we all just agree as the greater design community to stop fucking talking about Comic Sans altogether? It’s getting fucking old. Don’t worry about what other people fucking think. Saul Bass on failure: Failure is built into creativity… the creative act involves this element of ‘newness’ and ‘experimentalism,’ then one must expect and accept the fucking possibility of failure. While having drinks with Tibor Kalman one night, he told me, “When you make something no one hates, no one fucking loves it.” Dedicate yourself to lifelong fucking learning. If you fucking give up, you will achieve nothing. Intuition is fucking important. The graphic designer’s first fucking consideration is always the size and shape of the format, whether for the printed page or for digital display. If you’re not being fucking honest with yourself how could you ever hope to communicate something meaningful to someone else? This design is fucking brilliant. You are not your fucking work. Sometimes it is appropriate to place various typographic elements on the outside of the fucking left margin of text
+		<div class='news-wrapper'>
+			<div class='news-latest block'>
+				<div class='title'>最新消息</div>
+				<ul>
+					<?php $my_query = new WP_Query( array(
+			            'post_type' => 'post',
+			            'category_name' => 'important-news, activities-news',
+			            'posts_per_page' => 6
+			        ) );
+					while ( $my_query->have_posts() ) : $my_query->the_post();
+					$do_not_duplicate[] = $post->ID; ?>
+					
+						<li>
+							<div class='meta'>
+								<div class='type'>
+									<img src='<?php echo get_template_directory_uri()?>/assets/img/svgicons/icon-info.svg'>
+								</div>
+								<time><?php the_time( 'Y/m/d' ); ?></time>
+							</div>
+							<div class='category'><?php echo the_category('single')?></div>
+							<div class='post-title'>
+								<a href='<?php echo the_permalink();?>'><?php echo the_title()?></a>
+
+							</div>
+						</li>
+					<?php endwhile; ?>
+				</ul>
+			</div>
+			<div class='news-others block'>
+				<div class='title'>校內外其他學術活動、徵稿、徵才、獎學金</div>
+				<ul>
+					<?php query_posts( array ( 'category_name' => 'other-news', 'posts_per_page' => 6 ) );
+						if ( have_posts() ) : while ( have_posts() ) : the_post(); ?> 
+							
+							<li>
+								<div class='meta'>
+									<time><?php the_time( 'Y/m/d' ); ?></time>
+								</div>
+								
+								<div class='post-title'>
+									<a href='<?php echo the_permalink();?>'><?php echo the_title()?></a>
+
+								</div>
+							</li>
+							
+					<?php endwhile; endif; ?>
+				</ul>
+			</div>
+		</div>
+		<div>
+		<?php wp_reset_query(); ?>
+		<?php if (have_posts()) : while (have_posts()) : the_post();?>
+			<?php the_content(); ?>
+		<?php endwhile; endif; ?>
+
+		<?php
+			//https://www.imagely.com/docs/nextgen-gallery-shortcodes/
+			// echo do_shortcode( '[ngg_images album_ids=0 display_type=photocrati-nextgen_basic_compact_album galleries_per_page=6 pagination=0]' );
+		echo do_shortcode( '[ngg_images gallery_ids="1" display_type="photocrati-nextgen_basic_thumbnails" images_per_page=8]' );
+		?>
+		</div>
 	</section>
 </main>
 
