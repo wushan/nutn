@@ -1,0 +1,57 @@
+.ngg-galleryoverview {
+	margin: 0;
+	.slideshowlink {
+		display: none;
+	}
+	.ngg-gallery-thumbnail-box {
+		margin: 0;
+		@include gallery(6 of 12 0);
+		@include breakpoint(768px) {
+			@include gallery( 3 of 12 0);
+		}
+		.ngg-gallery-thumbnail {
+			width: 100%;
+		}
+	}
+	.ngg-gallery-thumbnail {
+		img {
+			border: 0;
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			height: auto;
+			@include filter(saturate(0%));
+			transition: .3s all ease-out;
+		}
+		a {
+			cursor: pointer;
+			display: block;
+			&:hover {
+				img {
+					@include filter(saturate(100%));
+				}		
+			}
+		}
+		
+	}
+}
+
+.gallery-wrapper {
+	position: relative;
+	.title {
+		position: absolute;
+		top: 6px;
+		left: 0;
+		right: 0;
+		z-index: 2;
+		h2 {
+			display: inline-block;
+			vertical-align: middle;
+			background-color: $blue;
+			color: $white;
+			margin: 0;
+			padding: .5em 1em;
+		}
+		
+	}
+}

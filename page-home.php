@@ -12,7 +12,7 @@ get_header();
 	<div class="meteor-slideshow-wrapper">
 		<?php masterslider(1); ?>
 		<div class='overlay'>
-			<img src=<?php echo get_template_directory_uri()?>/assets/img/nutn-ee-logo.png>
+			<img src='<?php echo get_template_directory_uri()?>/assets/img/nutn-ee-logo.png'>
 		</div>
 	</div>
 	<div id='navigation'>
@@ -23,7 +23,6 @@ get_header();
 					    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" id="site-logo" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 					 
 					        <img src="<?php echo get_theme_mod( 'custom_logo_header' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
-					 
 					    </a>
 					 
 					    <?php else : ?>
@@ -34,9 +33,12 @@ get_header();
 			</div>
 
 			<nav>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-			<?php get_search_form()?>
+				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+				<a href='javascript:;' class='search-trigger js-search-trigger'><img src='<?php echo get_template_directory_uri()?>/assets/img/svgicons/icon-search.svg'></a>
 			</nav>
+			
+				<?php get_search_form()?>
+			
 
 		</div>
 	</div>
@@ -63,7 +65,19 @@ get_header();
 								</div>
 								<time><?php the_time( 'Y/m/d' ); ?></time>
 							</div>
-							<div class='category'><?php echo the_category('single')?></div>
+							<div class='category'>
+								<?php
+								    $category = get_the_category();
+
+								    $the_category_id = $category[0]->cat_ID;
+									
+								    if(function_exists('rl_color')){
+								        $rl_category_color = rl_color($the_category_id);
+								        
+								    }
+								?>
+								<div class='category-tag' style='background-color: <?php echo $rl_category_color; ?>'><?php echo the_category('single')?></div>
+								</div>
 							<div class='post-title'>
 								<a href='<?php echo the_permalink();?>'><?php echo the_title()?></a>
 
@@ -93,18 +107,36 @@ get_header();
 				</ul>
 			</div>
 		</div>
-		<div>
+		<div class='separator'>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		
 		<?php wp_reset_query(); ?>
 		<?php if (have_posts()) : while (have_posts()) : the_post();?>
-			<?php the_content(); ?>
+			<div class='restrict-large'>
+				<?php the_content(); ?>
+			</div>
 		<?php endwhile; endif; ?>
-
-		<?php
-			//https://www.imagely.com/docs/nextgen-gallery-shortcodes/
-			// echo do_shortcode( '[ngg_images album_ids=0 display_type=photocrati-nextgen_basic_compact_album galleries_per_page=6 pagination=0]' );
-		echo do_shortcode( '[ngg_images gallery_ids="1" display_type="photocrati-nextgen_basic_thumbnails" images_per_page=8]' );
-		?>
-		</div>
+			<div class='gallery-wrapper'>
+				<div class='title restrict-large'>
+					<h2>本系精彩戶外教學活動</h2>
+				</div>
+				<div class='separator'>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<?php
+					//https://www.imagely.com/docs/nextgen-gallery-shortcodes/
+					// echo do_shortcode( '[ngg_images album_ids=0 display_type=photocrati-nextgen_basic_compact_album galleries_per_page=6 pagination=0]' );
+				echo do_shortcode( '[ngg_images gallery_ids="1" display_type="photocrati-nextgen_basic_thumbnails" images_per_page=8]' );
+				?>
+			</div>
+		
 	</section>
 </main>
 

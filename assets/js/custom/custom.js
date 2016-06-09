@@ -12,7 +12,23 @@ jQuery(document).ready(function(){
 		responsiveWidth: true,
 		zIndex: 9999
 	});
+  //Search Form
+  jQuery('.js-search-trigger').on('click',function(){
+    jQuery('.search-form-wrapper').fadeIn().promise().done(function(){
+      jQuery(this).addClass('active');
+    });
+  });
+
+  jQuery('.search-form-wrapper').on('click', '.js-close', function(){
+    jQuery(this).parents('.search-form-wrapper').fadeOut().promise().done(function(){
+      jQuery(this).removeClass('active');
+    });
+  });
+
+  //Gallery
+  jQuery('.ngg-galleryoverview .slideshowlink, .ngg-galleryoverview .ngg-navigation').remove();
 });
+
 
 //typeKit
 WebFontConfig = {

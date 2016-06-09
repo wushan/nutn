@@ -2,6 +2,12 @@
 .call-action {
   padding: 2em 0;
 }
+.category-tag{
+  padding: 0 .5em;
+  a {
+    color: $white;
+  }
+}
 .btn {
   @extend .transition;
   display: inline-block;
@@ -12,11 +18,16 @@
   background-color: transparent;
   border: 0;
   margin: 0 .1em;
+  &.compact {
+    padding: 0 2em;
+    height: 44px;
+    line-height: 44px;
+  }
   &.basic {
-    background-color: $main-dark;
+    background-color: $main;
     color: $white;
     &:hover {
-      background-color: $main-dark;
+      background-color: darken($main, 10%);
     }
     &:active {
       background-color: darken($main-dark, 10%);

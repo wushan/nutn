@@ -1,0 +1,21 @@
+@include susy-breakpoint(1024px, 12) {
+  .footer-inner {
+  	.block {
+	  	@include span(2 of 12);
+	  	&:nth-child(2) {
+	  		@include span(7 of 12);
+	  	}
+	  	&:last-child {
+	  		@include span(3 of 12 last);
+	  		a {
+	  			display: inline-block;
+	  			vertical-align: middle;
+	  			opacity: .5;
+	  			&:hover {
+	  				opacity: 1;
+	  			}
+	  		}
+	  	}
+	  }
+  }
+}
