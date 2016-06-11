@@ -3,6 +3,12 @@
  * The template for displaying the footer.
  */
 ?>
+	<div class='separator'>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
 	<footer>
 		<?php wp_nav_menu( array( 'theme_location' => 'footer' ) ); ?>
 	

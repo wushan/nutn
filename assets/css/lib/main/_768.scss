@@ -21,4 +21,36 @@
 			}
 		}
 	}
+	//Category
+	.category-wrapper {
+
+		.sidebar {
+			@include span(2 of 12 .5);
+		}
+		#content {
+			@include span(10 of 12 .5 last);
+		}
+	}
+	.category-list {
+		.post-title {
+			width: calc( 100% - 210px );
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+	//single
+	.single-inner {
+
+		.sidebar {
+			@include span(2 of 12 .5);
+		}
+		#content {
+			@include span(10 of 12 .5 last);
+			margin-top: 0;
+			border-top: 0;
+			.entry-meta {
+				margin: 0 0 2em 0;
+			}
+		}
+	}
 }

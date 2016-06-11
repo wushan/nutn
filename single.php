@@ -2,56 +2,118 @@
 get_header();
 
 ?>
-<main id="main" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
-	<section class='page-cover'>
-		<div class='background' style='background-image: url(<?php the_post_thumbnail_url();?>);'></div>
-		<div class='page-cover-item restrict'>
-			
-			<article id="post-<?php the_ID(); ?>" role="article">
-				<header class="article-header">
-					<div class="meta">
-						<div class='category'><?php the_category()?></div>
-					</div>
-					<h1 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
-				</header>
-			</article>
+<header id='header'>
+	<div id='navigation'>
+		<div class="navigation-inner sticky">
+			<div id='brand'>
+				<div class='brand-title'>
+					<?php if ( get_theme_mod( 'custom_logo_header' ) ) : ?>
+					    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" id="site-logo" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+					 
+					        <img src="<?php echo get_theme_mod( 'custom_logo_header' ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+					    </a>
+					 
+					    <?php else : ?>
+					    <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				    <?php endif; ?>
 
-		</div>
-	</section>
-	<section class='page-container'>
-		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-			<article id="post-<?php the_ID(); ?>" role="article">
-				<div class="entry-meta">
-					<?php echo 'Poseted on '.get_the_time('Y-m-d'); ?>
 				</div>
-				<div class='restrict'>
-					<div class="entry-content">
-						<?php the_content(); ?>
-					</div>
-				</div>
-			</article>
-			<?php comments_template(); ?>
-		<?php endwhile; ?>
-		<?php else : ?>
-			<div class='restrict'>
-				<article id="post-not-found" class="hentry">
-					<header class="article-header">
-						<h1>Oops, Post Not Found!</h1>
-					</header>
-						<section class="entry-content">
-						<p>Uh Oh. Something is missing. Try double checking things.</p>
-					</section>
-					<footer class="article-footer">
-						<p>This is the error message in the index.php template.</p>
-					</footer>
-				</article>
 			</div>
 
-		<?php endif; ?>
+			<nav>
+				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+				<a href='javascript:;' class='search-trigger js-search-trigger'><img src='<?php echo get_template_directory_uri()?>/assets/img/svgicons/icon-search.svg'></a>
+			</nav>
+			
+				<?php get_search_form()?>
+			
+
+		</div>
+	</div>
+	<div class="header-cover" style='background-image: url("<?php the_post_thumbnail_url() ?>");'>
+		<div class='header-cover-inner restrict-large'>
+			<h1><?php echo the_title()?></h1>
+		</div>
+	</div>
+	
+</header>
+
+<main id="main" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+	<section class='page-container'>
+		<div class='separator'>
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<div class="breadcrumbs" typeof="BreadcrumbList" vocab="http://schema.org/">
+			<div class='restrict-large'>
+				<div class='breadcrumbs-inner'>
+				    <?php if(function_exists('bcn_display'))
+				    {
+				        bcn_display();
+				    }?>
+				</div>
+			</div>
+		</div>
+		<div class='single-wrapper container'>
+			<div class='single-inner restrict-large'>
+				<div class='sidebar'>
+					<ul>
+						<?php wp_list_categories('title_li=&exclude=1&order=DESC');?>
+					</ul>
+				</div>
+				<div id='content' role='main'>
+					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+						<article id="post-<?php the_ID(); ?>" role="article">
+							<div class="entry-meta">
+								<div class='category'>
+									<?php
+									    $category = get_the_category();
+
+									    $the_category_id = $category[0]->cat_ID;
+										
+									    if(function_exists('rl_color')){
+									        $rl_category_color = rl_color($the_category_id);
+									        
+									    }
+									?>
+									<div class='category-tag' style='background-color: <?php echo $rl_category_color; ?>'><?php echo the_category('single')?>
+									</div>
+								</div>
+								<time><?php echo get_the_time('Y-m-d'); ?></time>
+							</div>
+							<div class='entry-title'>
+								<h1><?php the_title(); ?></h1>
+							</div>
+							<div class="entry-content">
+								<?php the_content(); ?>
+							</div>
+						</article>
+						
+					<?php endwhile; ?>
+					<?php else : ?>
+						<div class='restrict'>
+							<article id="post-not-found" class="hentry">
+								<header class="article-header">
+									<h1>Oops, Post Not Found!</h1>
+								</header>
+									<section class="entry-content">
+									<p>Uh Oh. Something is missing. Try double checking things.</p>
+								</section>
+								<footer class="article-footer">
+									<p>This is the error message in the index.php template.</p>
+								</footer>
+							</article>
+						</div>
+					<?php endif; ?>
+				</div>
+			</div>
+		</div>
 	</section>
 </main>
 
-<!-- <?php get_sidebar(); ?> -->
+
 
 
 
