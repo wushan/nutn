@@ -1,10 +1,12 @@
 @include susy-breakpoint(1280px, 12) {
   nav {
-    display: block;
-    //Normal
-    ul {
+    &.main-navigation {
       display: block;
-      li {
+      //Normal
+      ul {
+        display: block;
+        li {
+        }
       }
     }
     a.mobile-trigger {

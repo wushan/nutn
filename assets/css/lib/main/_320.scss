@@ -427,4 +427,42 @@ nav.pagination {
 			vertical-align: middlem;
 		}
 	}
+	.entry-attachments {
+		.attachments-title {
+			border-top: 1px solid $gray;
+
+			h3 {
+				margin: 0;
+				background-color: $darkestgray;
+				padding: 0 1em;
+				display: inline-block;
+				vertical-align: middle;
+				color: $white;
+				font-weight: 300;
+			}
+		}
+		ul {
+			margin: 0 0 0 2em;
+			padding: 1em 0;
+			list-style-type: none;
+			li {
+				border-bottom: 1px solid $lightgray;
+				padding: .5em 0;
+				@extend .clr;
+				.name {
+					float: left;
+					width: calc( 100% - 100px );
+				}
+				.download {
+					float: right;
+					text-align: right;
+					width: 100px;
+				}
+				a {
+					color: $colorblue;
+					display: block;
+				}
+			}
+		}
+	}
 }

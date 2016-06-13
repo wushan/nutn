@@ -26,7 +26,7 @@ get_header();
 				</div>
 			</div>
 
-			<nav>
+			<nav class='main-navigation'>
 				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 				<a href='javascript:;' class='search-trigger js-search-trigger'><img src='<?php echo get_template_directory_uri()?>/assets/img/svgicons/icon-search.svg'></a>
 			</nav>
@@ -83,7 +83,13 @@ get_header();
 				         <li>
 								<div class='meta'>
 									<div class='type'>
-										<img src='<?php echo get_template_directory_uri()?>/assets/img/svgicons/icon-info.svg'>
+										<?php $attachments = new Attachments( 'attachments' ); /* pass the instance name */ ?>
+										<?php if( $attachments->exist() ) : ?>
+											<img src='<?php echo get_template_directory_uri()?>/assets/img/svgicons/icon-attachment.svg'>
+										<?php else: ?>
+											<img src='<?php echo get_template_directory_uri()?>/assets/img/svgicons/icon-info.svg'>
+										<?php endif; ?>
+										
 									</div>
 									<time><?php the_time( 'Y/m/d' ); ?></time>
 								</div>
@@ -99,10 +105,9 @@ get_header();
 									    }
 									?>
 									<div class='category-tag' style='background-color: <?php echo $rl_category_color; ?>'><?php echo the_category('single')?></div>
-									</div>
+								</div>
 								<div class='post-title'>
 									<a href='<?php echo the_permalink();?>'><?php echo the_title()?></a>
-
 								</div>
 							</li>
 				      <?php endwhile; ?>

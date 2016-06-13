@@ -32,7 +32,7 @@ get_header();
 				</div>
 			</div>
 
-			<nav>
+			<nav class='main-navigation'>
 				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 				<a href='javascript:;' class='search-trigger js-search-trigger'><img src='<?php echo get_template_directory_uri()?>/assets/img/svgicons/icon-search.svg'></a>
 			</nav>
@@ -52,7 +52,7 @@ get_header();
 				<ul>
 					<?php $my_query = new WP_Query( array(
 			            'post_type' => 'post',
-			            'category_name' => 'important-news, activities-news',
+			            'category_name' => 'important-news, activities-news, admission-news, student-association',
 			            'posts_per_page' => 6
 			        ) );
 					while ( $my_query->have_posts() ) : $my_query->the_post();
@@ -61,7 +61,12 @@ get_header();
 						<li>
 							<div class='meta'>
 								<div class='type'>
-									<img src='<?php echo get_template_directory_uri()?>/assets/img/svgicons/icon-info.svg'>
+									<?php $attachments = new Attachments( 'attachments' ); /* pass the instance name */ ?>
+									<?php if( $attachments->exist() ) : ?>
+										<img src='<?php echo get_template_directory_uri()?>/assets/img/svgicons/icon-attachment.svg'>
+									<?php else: ?>
+										<img src='<?php echo get_template_directory_uri()?>/assets/img/svgicons/icon-info.svg'>
+									<?php endif; ?>
 								</div>
 								<time><?php the_time( 'Y/m/d' ); ?></time>
 							</div>

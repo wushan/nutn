@@ -271,8 +271,8 @@ function custom_footer_register( $wp_customize ) {
 add_action( 'customize_register', 'custom_header_register' );
 add_action( 'customize_register', 'custom_footer_register' );
 
-//Pagination
-
+//Disable Attachment Settings
+add_filter( 'attachments_settings_screen', '__return_false' );
 ?>
 
 

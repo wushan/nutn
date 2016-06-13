@@ -60,7 +60,8 @@
   z-index: 999;
   .navigation-inner {
     box-sizing: border-box;
-    padding: 1em;
+    height: 60px;
+    // padding: 1em;
     @extend .clr;
     box-shadow: 0 3px 6px rgba($black,.33);
   }
@@ -86,6 +87,7 @@
   float: left;
   // @include span(3 of 12);
   .brand-title {
+    padding: 16px .5em;
     a {
       display: block;
       color: $white;
@@ -98,32 +100,91 @@
   }
 }
 nav {
-  display: none;
-  text-align: right;
-  margin-left: 250px;
-  // @include span(9 of 12 last);
-  .menu-primary-nav-container {
-    width: calc( 100% - 40px );
-    float: left;
-  }
-  .search-trigger {
-    display: inline-block;
-    vertical-align: middle;
-  }
-  //Normal
-  ul {
-    font-size: 0;
+  &.main-navigation {
     display: none;
-    li {
+    text-align: right;
+    margin-left: 250px;
+    // height: 60px;
+    // @include span(9 of 12 last);
+    .menu-primary-nav-container {
+      width: calc( 100% - 40px );
+      float: left;
+    }
+    .search-trigger {
       display: inline-block;
       vertical-align: middle;
-      font-size: 1rem;
-      margin-right: 4px;
-      a {
-        display: block;
-        color: $white;
-        font-size: 1.1em;
-        padding: 0 .5em;
+      padding: 21px .5em;
+    }
+    //Normal
+    ul {
+      font-size: 0;
+      display: none;
+      li {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 1rem;
+        position: relative;
+        &.current-menu-item {
+          a {
+            background-color: $sadblue;
+          }
+        }
+        a {
+          display: block;
+          color: $white;
+          font-size: 1.1em;
+          padding: 0 .5em;
+          line-height: 60px;
+          &:hover {
+            background-color: $sadblue;
+          }
+          
+        }
+        //Level 2
+        ul {
+          display: none;
+          margin-left: -75px;
+          padding: 0 1em;
+          width: 150px;
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          background-color: $smokygray;
+          box-shadow: 0 6px 12px -6px rgba($black, .33);
+          &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            margin-left: -10px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 10px 10px 10px;
+            border-color: transparent transparent $smokygray transparent;
+          }
+          li {
+            display: block;
+            margin: 0;
+            a {
+              padding: .5em;
+              color: $black;
+              border-bottom: 1px solid $lightgray;
+              line-height: initial;
+              text-align: center;
+              &:hover {
+                background-color: $colorblue;
+                color: $white;
+              }
+            }
+            &:last-child {
+              a {
+                border-bottom: 0;
+              }
+            }
+          }
+        }
       }
     }
   }

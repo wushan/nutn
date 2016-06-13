@@ -20,7 +20,7 @@ get_header();
 				</div>
 			</div>
 
-			<nav>
+			<nav class='main-navigation'>
 				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 				<a href='javascript:;' class='search-trigger js-search-trigger'><img src='<?php echo get_template_directory_uri()?>/assets/img/svgicons/icon-search.svg'></a>
 			</nav>
@@ -89,6 +89,28 @@ get_header();
 							<div class="entry-content">
 								<?php the_content(); ?>
 							</div>
+							
+								<?php $attachments = new Attachments( 'attachments' ); /* pass the instance name */ ?>
+								<?php if( $attachments->exist() ) : ?>
+									<div class='entry-attachments'>
+										<div class='attachments-title'>
+											<h3>相關附件</h3>
+										</div>
+										<ul>
+											<?php while( $attachment = $attachments->get() ) : ?>
+												<li>
+													<div class='name'>
+														<?php echo $attachments->field( 'title' ); ?>
+													</div>
+													<div class='download'>
+														<a href='<?php echo $attachments->url(); ?>' target='_blank'>下載</a>
+													</div>
+												</li>
+											<?php endwhile; ?>
+										</ul>
+									</div>
+								<?php endif; ?>
+							
 						</article>
 						
 					<?php endwhile; ?>

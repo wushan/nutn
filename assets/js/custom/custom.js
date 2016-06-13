@@ -5,6 +5,7 @@
  *
  * @since 1.0.0
  */
+
 jQuery(document).ready(function(){
 	jQuery(".sticky").sticky({
 		topSpacing: 0,
@@ -27,8 +28,28 @@ jQuery(document).ready(function(){
 
   //Gallery
   jQuery('.ngg-galleryoverview .slideshowlink, .ngg-galleryoverview .ngg-navigation').remove();
-});
 
+  //Navigation
+  var timer;
+  jQuery('.main-navigation #menu-primary-nav > li > a').on('mouseenter', function(){
+    //Release All
+    jQuery(this).parent().siblings().children('ul').slideUp();
+    if ( jQuery(this).siblings().length > 0 ) {
+      jQuery(this).siblings().stop(true,true).slideDown();
+    }
+  });
+
+  jQuery('.main-navigation .sub-menu').on('mouseenter', function(){
+    //Stop Timer
+    clearTimeout(timer);
+  });
+  jQuery('.main-navigation .sub-menu').on('mouseleave',function(){
+    
+    timer = setTimeout(function(){
+      jQuery('.main-navigation .sub-menu').stop(true,true).slideUp();
+    }, 1500);
+  });
+});
 
 //typeKit
 WebFontConfig = {
