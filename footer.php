@@ -41,6 +41,14 @@
 	    </div>
 	    <div class='copyrights'>Copyrights by <u>NUTN Department of Ecoscience and Ecotechnology.</u> All Rights Reserved.</div>
 	</footer>
+
+	<!-- Slidebar menu -->
+
+<div class="slidemenu-wrapper">
+	<div class="slidemenu-inner">
+		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+	</div>
+</div>
 <?php wp_footer(); ?>
 
 </body>

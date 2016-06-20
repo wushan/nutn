@@ -1,4 +1,10 @@
 <?php
+/*
+ Template Name: Galleries
+*/
+?>
+
+<?php
 get_header();
 
 ?>
@@ -37,8 +43,7 @@ get_header();
 	</div>
 	
 </header>
-
-<main id="main" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+<main id="main" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog" class='single-gallery-wrapper'>
 	<section class='page-container'>
 		<div class='separator'>
 			<span></span>
@@ -56,61 +61,15 @@ get_header();
 				</div>
 			</div>
 		</div>
-		<div class='single-wrapper container'>
-			<div class='single-inner restrict-large'>
-				<div class='sidebar'>
-					<ul>
-						<?php wp_list_categories('title_li=&exclude=1&order=DESC');?>
-					</ul>
-				</div>
+		<div class='page-wrapper container'>
+			<div class='page-inner restrict-large'>
 				<div id='content' role='main'>
+					<h2><?php echo the_title()?></h2>
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 						<article id="post-<?php the_ID(); ?>" role="article">
-							<div class="entry-meta">
-								<div class='category'>
-									<?php
-									    $category = get_the_category();
-
-									    $the_category_id = $category[0]->cat_ID;
-										
-									    if(function_exists('rl_color')){
-									        $rl_category_color = rl_color($the_category_id);
-									        
-									    }
-									?>
-									<div class='category-tag' style='background-color: <?php echo $rl_category_color; ?>'><?php echo the_category('single')?>
-									</div>
-								</div>
-								<time><?php echo get_the_time('Y-m-d'); ?></time>
-							</div>
-							<div class='entry-title'>
-								<h1><?php the_title(); ?></h1>
-							</div>
 							<div class="entry-content">
 								<?php the_content(); ?>
 							</div>
-							
-								<?php $attachments = new Attachments( 'attachments' ); /* pass the instance name */ ?>
-								<?php if( $attachments->exist() ) : ?>
-									<div class='entry-attachments'>
-										<div class='attachments-title'>
-											<h3>相關附件</h3>
-										</div>
-										<ul>
-											<?php while( $attachment = $attachments->get() ) : ?>
-												<li>
-													<div class='name'>
-														<?php echo $attachments->field( 'title' ); ?>
-													</div>
-													<div class='download'>
-														<a href='<?php echo $attachments->url(); ?>' target='_blank'>下載</a>
-													</div>
-												</li>
-											<?php endwhile; ?>
-										</ul>
-									</div>
-								<?php endif; ?>
-							
 						</article>
 						
 					<?php endwhile; ?>
@@ -135,7 +94,7 @@ get_header();
 	</section>
 </main>
 
-
+<!-- <?php get_sidebar(); ?> -->
 
 
 

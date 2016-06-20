@@ -30,8 +30,8 @@ get_header();
 				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 				<a href='javascript:;' class='search-trigger js-search-trigger'><img src='<?php echo get_template_directory_uri()?>/assets/img/svgicons/icon-search.svg'></a>
 			</nav>
-			
-				<?php get_search_form()?>
+			<a class="js-mobile-trigger mobile-trigger icons-mobile-btn sb-toggle-left" href="javascript:;"></a>
+			<?php get_search_form()?>
 			
 
 		</div>

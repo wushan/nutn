@@ -44,9 +44,20 @@
 }
 
 //NAVIGATION
-.category, .single {
+.category, .single, .page {
   #navigation {
     position: relative;
+    .navigation-inner {
+      background-color: #4a4a4a;
+    }
+  }
+}
+.home.page #navigation {
+  position: absolute;
+  .navigation-inner {
+    background-color: transparent;
+  }
+  .is-sticky {
     .navigation-inner {
       background-color: #4a4a4a;
     }
@@ -125,7 +136,7 @@ nav {
         font-size: 1rem;
         position: relative;
         &.current-menu-item {
-          a {
+          & > a {
             background-color: $sadblue;
           }
         }
@@ -167,6 +178,12 @@ nav {
           li {
             display: block;
             margin: 0;
+            &.current-menu-item {
+              & > a {
+                color: $white;
+                background-color: $colorblue;
+              }
+            }
             a {
               padding: .5em;
               color: $black;
@@ -188,11 +205,6 @@ nav {
       }
     }
   }
-  a.mobile-trigger {
-    display: inline-block;
-    vertical-align: middle;
-    @include last;
-  }
   //Nav in SlideBar
   &.slide {
     ul {
@@ -202,6 +214,18 @@ nav {
       }
     }
   }
+}
+a.mobile-trigger {
+  display: inline-block;
+  vertical-align: middle;
+  @include last;
+  background-image: url('assets/img/menu.png');
+  height: 44px;
+  width: 44px;
+  text-indent: -9999px;
+  background-position: center;
+  background-size: cover;
+  padding: 8px;
 }
 .meteor-slideshow-wrapper {
   position: relative;
@@ -245,6 +269,64 @@ nav {
       &:last-child {
         border: 0;
       }
+    }
+  }
+}
+
+
+.slidemenu-wrapper {  
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: -100%;
+  width: 70%;
+  max-width: 280px;
+  background-color: darken($darkgray, 25%);
+  z-index: 9999;
+  box-shadow: 0 3px 6px rgba($black,.33);
+  transition: .3s all ease-out;
+  &.active {
+    left: 0;
+  }
+  .slidemenu-inner {
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    .menu {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      li {
+        border-bottom: 1px solid darken($darkgray, 30%);
+        a {
+          padding: 1em 1.5em;
+          box-sizing: border-box;
+          display: block;
+          color: rgba($white, .5);
+          &:hover, &:active {
+            color: $white;
+          }
+          &.active {
+            & + ul {
+              display: block;
+            }
+          }
+        }
+        ul {
+          display: none;
+          margin: 0;
+          padding: 0;
+          list-style-type: none;
+          li {
+            padding-left: 2em;
+            background-color: $black;
+            &:last-child {
+              border: 0;
+            }
+          }
+        }
+      }
+      padding: 0;
     }
   }
 }

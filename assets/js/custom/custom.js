@@ -49,6 +49,41 @@ jQuery(document).ready(function(){
       jQuery('.main-navigation .sub-menu').stop(true,true).slideUp();
     }, 1500);
   });
+  
+  (function() {
+    //Trigger
+    jQuery('.js-mobile-trigger').on('click', function(){
+      jQuery('.slidemenu-wrapper').toggleClass('active');
+    });
+    // //Close on body click
+    // jQuery(document).on('mouseup touchstart', function(e) {
+    //     var container = jQuery('.slidemenu-wrapper');
+    //     if (!container.is(e.target)// if the target of the click isn't the container...
+    //       && container.has(e.target).length === 0) // ... nor a descendant of the container
+    //       {
+    //           container.removeClass('active');
+    //       }
+    // });
+    //Menu
+    jQuery('.slidemenu-wrapper').on('click', 'a', function(event){
+      if (jQuery(this).siblings('ul').length > 0) {
+        event.preventDefault();
+        jQuery(this).toggleClass('active');
+        //Close All Others
+        jQuery(this).parent().siblings().find('a').removeClass('active');
+      }
+    });
+
+    // jQuery(document).mouseup(function(e) {
+    //     var container = jQuery('.slidemenu-wrapper');
+    //     if (!container.is(e.target)// if the target of the click isn't the container...
+    //       && container.has(e.target).length === 0) // ... nor a descendant of the container
+    //       {
+    //           container.removeClass('active');
+    //       }
+    // });
+  }());
+
 });
 
 //typeKit

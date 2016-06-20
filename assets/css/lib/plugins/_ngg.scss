@@ -55,3 +55,58 @@
 		
 	}
 }
+
+.single-gallery-wrapper {
+	.ngg-galleryoverview {
+		.ngg-gallery-thumbnail-box {
+			@include gallery(6 of 12 .25);
+			margin-bottom: 1em;
+			@include breakpoint(768px) {
+				@include gallery(3 of 12 .25);
+			}
+			a {
+				display: block;
+				position: relative;
+				color: $white;
+				&:hover {
+					.overlay {
+						display: block;
+					}
+				}
+				.overlay {
+					display: none;
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					background-color: rgba($black, .8);
+					box-sizing: border-box;
+					font-size: 0;
+					pointer-events: none;
+					&:before {
+						content: '';
+						display: inline-block;
+						vertical-align: middle;
+						width: 0;
+						height: 100%;
+					}
+					.overlay-inner {
+						display: inline-block;
+						vertical-align: middle;
+						font-size: 1rem;
+						padding: 2rem;
+					}
+				}
+				h4 {
+					color: $white;
+				}
+				.description {
+					border: 1px solid $white;
+					padding: 1em;
+					
+				}
+			}
+		}
+	}	
+}

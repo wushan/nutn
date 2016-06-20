@@ -1,4 +1,9 @@
 <?php
+/*
+ Template Name: Huge
+*/
+?>
+<?php
 get_header();
 
 ?>
@@ -30,14 +35,13 @@ get_header();
 
 		</div>
 	</div>
-	<div class="header-cover" style='background-image: url("<?php the_post_thumbnail_url() ?>");'>
+	<div class="header-cover huge" style='background-image: url("<?php the_post_thumbnail_url() ?>");'>
 		<div class='header-cover-inner restrict-large'>
 			<h1><?php echo the_title()?></h1>
 		</div>
 	</div>
 	
 </header>
-
 <main id="main" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 	<section class='page-container'>
 		<div class='separator'>
@@ -56,36 +60,11 @@ get_header();
 				</div>
 			</div>
 		</div>
-		<div class='single-wrapper container'>
-			<div class='single-inner restrict-large'>
-				<div class='sidebar'>
-					<ul>
-						<?php wp_list_categories('title_li=&exclude=1&order=DESC');?>
-					</ul>
-				</div>
+		<div class='page-wrapper container'>
+			<div class='page-inner restrict-large'>
 				<div id='content' role='main'>
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 						<article id="post-<?php the_ID(); ?>" role="article">
-							<div class="entry-meta">
-								<div class='category'>
-									<?php
-									    $category = get_the_category();
-
-									    $the_category_id = $category[0]->cat_ID;
-										
-									    if(function_exists('rl_color')){
-									        $rl_category_color = rl_color($the_category_id);
-									        
-									    }
-									?>
-									<div class='category-tag' style='background-color: <?php echo $rl_category_color; ?>'><?php echo the_category('single')?>
-									</div>
-								</div>
-								<time><?php echo get_the_time('Y-m-d'); ?></time>
-							</div>
-							<div class='entry-title'>
-								<h1><?php the_title(); ?></h1>
-							</div>
 							<div class="entry-content">
 								<?php the_content(); ?>
 							</div>
@@ -135,7 +114,7 @@ get_header();
 	</section>
 </main>
 
-
+<!-- <?php get_sidebar(); ?> -->
 
 
 
