@@ -29,7 +29,6 @@
 		    		<h3>國立台南大學 | <strong>生態科學與技術學系</strong></h3>
 		    		<div class='contact'>
 			    		系辦地址：70167 臺南市東區榮譽街67號（E-107室）/  寄件地址：70005 臺南市中西區樹林街二段33號<br>電話：06-2601779 / 傳真：06-2601797<br>電子郵件：<a href='mailto:danin0325@mail.nutn.edu.tw'>danin0325@mail.nutn.edu.tw</a>
-			    		
 		    		</div>
 		    	</div>
 		    	<div class='block'>
@@ -39,7 +38,8 @@
 		    	</div>
 		    </div>
 	    </div>
-	    <div class='copyrights'>Copyrights by <u>NUTN Department of Ecoscience and Ecotechnology.</u> All Rights Reserved.</div>
+	    <div class='copyrights'>Copyrights by <u>NUTN Department of Ecoscience and Ecotechnology.</u> All Rights Reserved. / Last Update: <?php site_last_modified("Y-m-d"); ?></div>
+
 	</footer>
 
 	<!-- Slidebar menu -->
