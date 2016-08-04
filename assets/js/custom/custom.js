@@ -31,7 +31,7 @@ jQuery(document).ready(function(){
 
   //Navigation
   var timer;
-  jQuery('.main-navigation #menu-primary-nav > li > a').on('mouseenter', function(){
+  jQuery('.main-navigation #menu-primary-nav > li > a, .main-navigation #menu-primary-nav-en > li > a').on('mouseenter', function(){
     //Release All
     jQuery(this).parent().siblings().children('ul').slideUp();
     if ( jQuery(this).siblings().length > 0 ) {

@@ -125,7 +125,7 @@ img{display:block;max-width:100%;height:auto;margin:0 auto}
 #brand .brand-title a{display:block;color:#fff;font-weight:600;font-size:1.3em}
 #brand img{margin:0}
 nav.main-navigation{display:none;text-align:right;margin-left:250px}
-nav.main-navigation .menu-primary-nav-container{width:calc(100% - 40px);float:left}
+nav.main-navigation .menu-primary-nav-container,nav.main-navigation .menu-primary-nav-en-container{width:calc(100% - 40px);float:left}
 nav.main-navigation .search-trigger{display:inline-block;vertical-align:middle;padding:21px .5em}
 nav.main-navigation ul{font-size:0;display:none}
 nav.main-navigation ul li{display:inline-block;vertical-align:middle;font-size:1rem;position:relative}

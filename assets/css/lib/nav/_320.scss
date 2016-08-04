@@ -117,7 +117,7 @@ nav {
     margin-left: 250px;
     // height: 60px;
     // @include span(9 of 12 last);
-    .menu-primary-nav-container {
+    .menu-primary-nav-container, .menu-primary-nav-en-container {
       width: calc( 100% - 40px );
       float: left;
     }
