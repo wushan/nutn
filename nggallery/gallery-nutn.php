@@ -56,9 +56,10 @@ Follow variables are useable :
 
  	<?php endforeach; ?>
  	
-	<!-- Pagination -->
- 	<?php echo $pagination ?>
+	
  	
 </div>
+	<!-- Pagination -->
+	<?php echo $pagination ?>
 
 <?php endif; ?>
